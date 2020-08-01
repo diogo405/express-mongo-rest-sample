@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const userRoutes = require('./routes/userRoutes.js')
-const config = require('./conf/config.js')
+const config = require('config')
 let getConnection = require('./db/database.js')
 const exceptionHandler = require('./routes/handler.js')
 
@@ -14,5 +14,5 @@ const initRoutes = async () => {
 }
 
 initRoutes()
-
-app.listen(config.server.port, () => console.log(`App listening at http://localhost:${config.server.port}`))
+const port = config.get('server.port')
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
