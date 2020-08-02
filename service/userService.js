@@ -44,7 +44,7 @@ class UserService {
 		return this.db.collection('users')
 			.updateOne({ _id: new mongo.ObjectID(id) }, { $set: user })
 			.then(result => { 
-				if (result.upsertedCount == 0) {
+				if (result.nModified == 0) {
 					throw new ApiError(404, 'NOT_FOUND', 'Not found')
 				}
 				return result 
