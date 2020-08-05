@@ -9,4 +9,4 @@ request -> userRoutes -> userService -> Mongodb.
 
 All responses are wrapped in the ApiResponse class (id, success, payload, error). And all errors wrapped in the ApiError class.
 
-Lastly, there's a exception handler to deal with uncaught errors (routes/hanler.js).
+Lastly, there's a exception handler to deal with uncaught errors (routes/handler.js).
