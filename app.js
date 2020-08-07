@@ -4,8 +4,10 @@ const userRoutes = require('./routes/userRoutes.js')
 const config = require('config')
 let getConnection = require('./db/database.js')
 const exceptionHandler = require('./routes/handler.js')
+const cors = require('cors')
 
 app.use(express.json())
+app.use(cors())
 
 const initRoutes = async () => {
 	let db = await getConnection()
